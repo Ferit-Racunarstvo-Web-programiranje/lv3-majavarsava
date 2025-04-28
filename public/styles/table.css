@@ -1,0 +1,103 @@
+
+/* tablica stoji lijevo i uredena je*/
+
+table {
+    border-collapse: collapse;
+    margin: 20px 0 20px 50px;
+    display: inline-block;
+    width: auto;
+    text-align: left;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+table.static-table{
+    margin-left: 50px !important;
+}
+
+th {
+    background-color: #d168de;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #ddd; 
+}
+
+th, td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* slike su desno */
+aside {
+    margin: 20px auto;
+    text-align: center;
+}
+
+aside img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Responsive layout */
+@media (min-width: 768px) {
+    .table-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    table {
+        margin-left: 10px;
+    }
+
+    aside {
+        margin-left: 20px;
+        text-align: left;
+    }
+}
+
+/* tablica za lv3 */
+.full-width-section {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#filmovi-tablica {
+    margin: 0 auto;
+    table-layout: fixed;
+    width: 90%;     
+    border-collapse: collapse;
+}
+
+#filmovi-tablica thead tr th {
+    width: 25%;
+}
+
+#filmovi-tablica th, #filmovi-tablica td {
+    padding: 10px;
+    text-align: center;
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+	<html lang="hr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!--dodati meta tag bitan za stranicu-->
+		<meta name="description" content="LV1 iz web programiranja">
+		<meta name="author" content="Maja Varšava">
+		<meta name="keywords" content="web programiranje, LV1, HTML, projekt">
+		<!-- Opis govori da je lv1, autor govori koji je student, keywords govore o cemu je. -->
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script> <!-- PapaParse -->
+
+		<!--dodati link za css dokumente -->
+		<link rel="stylesheet" href="/styles/style_slike.css">
+    	<link rel="stylesheet" href="/styles/style.css">
+		<link rel="stylesheet" href="/styles/table.css">
+		<!-- dodani svi cssovi potrebni -->
+
+		<title>LV1 Web Programiranje - Maja Varšava</title> <!--promjenjen title -->
+	</head>
+	<body>
+		<header>
+		<h1>Dobrodosli na moju web stranicu</h1>
+		</header>
+
+		<nav aria-labelledby="primarna-navigacija"> <!-- dodano obilježje za ARIA-->
+			<ul class="nav-menu"> 
+				<!-- lijevo poravnato, dodan dropdown meni -->
+				<li class="dropdown">
+					<a href="#" class="dropbtn">Menu</a>
+					<div class="dropdown-content">
+						<a href="/">Home</a>
+						<a href="/slike">Galerija</a>
+						<a href="/grafikon">Grafikon</a>
+					</div>
+				</li>
+			</ul>
+		</nav>
+
+		<h1>Popis Filmova</h1>
+
+		<section class="table-section">
+			<table class="static-table">
+				<tr>
+					<th>ID</th>
+					<th>Naslov</th>
+					<th>Godina</th>
+					<th>Žanr</th>
+					<th>Trajanje</th>
+					<th>Država</th>
+					<th>Ocjena</th>
+				</tr>
+				<tr><td>2</td><td>Bugs Bunny's Third Movie</td><td>1982</td><td>Animacija</td><td>76</td><td>SAD</td><td>7.7</td></tr>
+				<tr><td>17</td><td>Ride a Wild Pony</td><td>1976</td><td>Romantični</td><td>91</td><td>SAD</td><td>5.7</td></tr>
+				<tr><td>23</td><td>Dead-Bang</td><td>1989</td><td>Krimić</td><td>109</td><td>SAD</td><td>6.0</td></tr>
+				<tr><td>32</td><td>Sleeping with the Enemy</td><td>1990</td><td>Drama</td><td>96</td><td>SAD</td><td>5.0</td></tr>
+				<tr><td>34</td><td>In Bed With Madonna</td><td>1990</td><td>Dokumentarni</td><td>111</td><td>SAD</td><td>5.3</td></tr>
+				<tr><td>45</td><td>Warning Sign</td><td>1985</td><td>Akcija</td><td>99</td><td>SAD</td><td>4.8</td></tr>
+				<tr><td>47</td><td>About Last Night</td><td>1986</td><td>Komedija</td><td>113</td><td>SAD</td><td>5.9</td></tr>
+				<tr><td>51</td><td>Some Like It Hot</td><td>1959</td><td>Komedija</td><td>120</td><td>SAD</td><td>9.1</td></tr>
+			</table>
+		
+			<!-- dodane slike -->
+			<aside class="film-images" aria-labelledby="film-images-heading" role="region">
+				<figure>
+					<picture>
+						<source srcset="slike/bugs_bunny_large.jpg" media="(min-width: 768px)">
+						<img 
+							src="slike/bugs_bunny_small.jpg" 
+							alt="A poster of Bugs Bunny's Third Movie, released in 1982, an animated classic" 
+							role="img" 
+							aria-describedby="bugs-bunny-caption"
+						>
+					</picture>
+					<figcaption id="bugs-bunny-caption">Bugs Bunny's Third Movie (1982)</figcaption>
+				</figure>
+				<figure>
+					<picture>
+						<source srcset="slike/ride_a_wild_pony_large.jpg" media="(min-width: 768px)">
+						<img 
+							src="slike/ride_a_wild_pony_small.jpg" 
+							alt="A poster of Ride a Wild Pony, a romantic drama released in 1976" 
+							role="img" 
+							aria-describedby="wild-pony-caption"
+						>
+					</picture>
+					<figcaption id="wild-pony-caption">Ride a Wild Pony (1976)</figcaption>
+				</figure>
+			</aside>
+		</section>
+
+		<!-- ----------------------------------------------------------------------------------------------- -->
+		<!--                                               LV3                                               -->
+		<!-- ----------------------------------------------------------------------------------------------- -->
+
+		<section id="filteri" aria-labelledby="filteri-heading">
+			<h2>Filtriraj filmove</h2>
+			<div class="filter-container">
+				<div class="filter-group">
+					<label for="filter-genre">Žanrovi:</label>
+					<div class="checkbox-group">
+						<label><input type="checkbox" value="Animation"> Animacija</label>
+						<label><input type="checkbox" value="Romance"> Romantika</label>
+						<label><input type="checkbox" value="Crime"> Krimić</label>
+						<label><input type="checkbox" value="Documentary"> Dokumentarni</label>
+						<label><input type="checkbox" value="Action"> Akcija</label>
+						<label><input type="checkbox" value="Comedy"> Komedija</label>
+						<label><input type="checkbox" value="Drama"> Drama</label>
+						<label><input type="checkbox" value="Adventure"> Avantura</label>
+						<label><input type="checkbox" value="Fantasy"> Fantazija</label>
+						<label><input type="checkbox" value="Horror"> Horor</label>
+						<label><input type="checkbox" value="Sci-Fi"> Znanstvena fantastika</label>
+						<label><input type="checkbox" value="Thriller"> Triler</label>
+					</div>
+				</div>
+				<div class="filter-group">
+					<label for="filter-year">Minimalna godina:</label>
+					<input type="number" id="filter-year" placeholder="Godina" min="1900" max="2025">
+				</div>
+				<div class="filter-group">
+					<label for="filter-rating">Minimalna ocjena:</label>
+					<input type="number" id="filter-rating" min="0" max="10" step="0.1" value="5">
+				</div>
+				<div class="filter-group">
+					<label for="filter-duration">Minimalno trajanje (min):</label>
+					<input type="range" id="filter-duration" min="0" max="300" step="5" value="60">
+					<span id="duration-value">60</span>
+				</div>
+				<div class="filter-buttons">
+					<button id="primijeni-filtere">Filtriraj</button>
+					<button id="resetiraj-filtere">Resetiraj</button>
+				</div>
+			</div>
+		</section>
+
+		<aside id="kosarica" aria-labelledby="kosarica-heading">
+			<h2 id="kosarica-heading">Moja košarica</h2>
+			<ul id="lista-kosarice"></ul>
+			<button id="potvrdi-kosaricu">Potvrdi odabir</button>
+		</aside>
+
+		<section class="full-width-section">
+			<table id="filmovi-tablica">
+				<thead>
+				<tr>
+					<th>Naslov</th>
+					<th>Žanr</th>
+					<th>Godina</th>
+					<th>Trajanje (min)</th>
+					<th>Ocjena</th>
+					<th>Dodaj</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</section>
+		  
+		<script src="script.js"></script>
+
+		<!-- <section>  -->
+			<!-- dodati neke od obilježja za ARIA -->
+			<!-- <h2>Ovo je glavna sekcija</h2>
+			<p>HTML5 omogucava semanticku strukturu koja poboljsava pristupacnost i SEO.</p>
+		</section> -->
+		 <!-- dodati jedan aside na desnoj strani s ugrađenom google mapom/filmom ili slično-->
+		<!-- <article>
+			<h2>Najnovije vijesti</h2>
+			<p>Ovdje se nalazi clanak s vaznim informacijama.</p>
+		</article>
+		 -->
+
+		<!--dodati odgovarajuće elemente na temelju danog zadatka: tablice, slike, tekst
+		Nepotrebno obrisati! -->
+		<footer>
+		<p>&copy; 2025. Web Programiranje. Sva prava pridrzana.</p>
+		</footer>
+	</body>
+	</html>
